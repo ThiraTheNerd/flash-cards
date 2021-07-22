@@ -5,4 +5,4 @@ from  .models import Course
 class FlashSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
-        fields = ('title' , 'body')
+        fields = ('title' , 'body' ,'id' ,)
