@@ -47,7 +47,7 @@ else:
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES["default"].update(db_from_env)
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
+ALLOWED_HOSTS = [".localhost", ".herokuapp.com", ".127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
@@ -59,8 +59,14 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "cards.apps.CardsConfig",
     "rest_framework",
+    "rest_framework.authtoken",
 ]
-
+# .....
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.TokenAuthentication",
+    )
+}
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
