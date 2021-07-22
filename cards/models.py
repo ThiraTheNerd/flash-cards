@@ -5,6 +5,7 @@ class Course(models.Model):
     title = models.CharField(max_length=30)
     body = models.CharField(max_length=400)
 
+
     def __str__(self):
         return self.title
 
@@ -14,5 +15,4 @@ class Course(models.Model):
     @classmethod
     def delete_course(cls , id):
         cls.objects.filter(id=id).delete()
-
 
