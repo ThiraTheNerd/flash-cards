@@ -12,9 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
-import dj_database_url
 from decouple import config, Csv
+import dj_database_url
+
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -58,6 +59,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "cards.apps.CardsConfig",
+    "cards",
     "rest_framework",
 ]
 
