@@ -15,4 +15,5 @@ class Course(models.Model):
     def delete_course(cls , id):
         cls.objects.filter(id=id).delete()
 
+
        
